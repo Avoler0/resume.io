@@ -3,10 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components'
 import AboutMe from './Component/AboutMe';
 import Profile from './Component/Profile';
+import Project from './Component/Project';
 import Skills from './Component/Skills';
 import GlobalStyle from './GlobalStyle';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -15,6 +15,7 @@ function App() {
         <Profile/>
         <AboutMe />
         <Skills />
+        <Project />
       </Container>
     </>
   )

@@ -7,12 +7,16 @@ import { ReactComponent as NotionIco } from "../images/icons/notion.svg"
 import { ReactComponent as ReactIco } from "../images/icons/react.svg"
 import { ReactComponent as TypeIco } from "../images/icons/typescript.svg"
 import { ReactComponent as StyleIco } from "../images/icons/styled-components.svg"
+import { ReactComponent as ReduxIco } from "../images/icons/redux.svg"
+import { ReactComponent as GitIco } from "../images/icons/git.svg"
+
+
 export default function Skills(){
   return (
     <SkillsDiv>
       <H3>Skills</H3>
       <Content>
-        <FrontEnd>
+        <Skill>
           <h4>Front-End</h4>
           <SkillWrap>
             <BorderDiv small >
@@ -37,26 +41,30 @@ export default function Skills(){
           <SkillWrap>
             <BorderDiv>
               <ReactIco width="68" height="90%" />
-              <div>React</div>  
+              <div style={{color:"#61dafb"}}>React</div>  
             </BorderDiv>
           </SkillWrap>
           <SkillWrap>
             <BorderDiv>
-              <ReactIco width="68" height="90%" />
-              <div>Redux</div>  
+              <ReduxIco width="68" height="90%" />
+              <div style={{color:"#764ABC"}}>Redux</div>  
             </BorderDiv>
+
           </SkillWrap>
 
 
-        </FrontEnd>
-        <Tools>
+        </Skill>
+        <Skill>
           <h4>Tools</h4>
             <BorderDiv>
               <NotionIco width="68" height="90%" />
               <div>Notion</div>  
             </BorderDiv>
-
-        </Tools>
+            <BorderDiv>
+              <GitIco width="68" height="90%" fill="#F05032" />
+              <div style={{color:"#F05032"}}>Git</div>  
+            </BorderDiv>
+        </Skill>
       </Content>
 
     </SkillsDiv>
@@ -87,6 +95,7 @@ const SkillWrap = styled.article`
 const BorderDiv = styled.div<{small?:boolean}>`
   display: ${props => props.small ? "inline-block" : "flex"};
   width: ${props => props.small ? "9rem" : "100%"};
+  flex-basis: fill;
   height: 6rem;
   margin-bottom: 0.3rem;
   text-align: center;
@@ -97,16 +106,20 @@ const BorderDiv = styled.div<{small?:boolean}>`
     transform: scale(1.1);
     transition: all ease-out 0.2s;
   }
+  :second-child{
+    
+  }
   svg{
+    flex-grow: 0;
     margin-top: 0.3rem;
     align-items: center;
     margin-left: ${props => props.small ? "0" : "1.2rem"};;
   }
   div{
+    flex-grow: 1;
     align-items: center;
-    font-size: 1.4rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-left: 2rem;
     ::before{
       display: inline-block;
       content: "";
@@ -116,14 +129,11 @@ const BorderDiv = styled.div<{small?:boolean}>`
   }
 `;
 
-const FrontEnd = styled.div`
+const Skill = styled.div`
   width: 40%;
-  h4{
-    text-align: center;
-  }
-`;
-const Tools = styled.div`
-  width: 40%;
+  padding: 1rem;
+  border: 2px solid #CCCCCC;
+  border-radius: 15px;
   h4{
     text-align: center;
   }
