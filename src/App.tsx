@@ -11,15 +11,11 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Routes>
-        <Route path='/' element={<Profile />} />
-          {/* <Container className="App">
-            <Profile/>
-            <AboutMe />
-            <Skills />
-          </Container> */}
-        {/* </Route> */}
-      </Routes>
+      <Container className="App">
+        <Profile/>
+        <AboutMe />
+        <Skills />
+      </Container>
     </>
   )
 }
