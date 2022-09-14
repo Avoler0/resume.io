@@ -6,7 +6,7 @@ import App from './App'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Routes>
-      <Route path="https://avoler0.github.io/" element={<App />}/>
+      <Route path="/" element={<App />}/>
     </Routes>
   </React.StrictMode>
 )
