@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components'
 import AboutMe from './Component/AboutMe';
 import Profile from './Component/Profile';
@@ -10,11 +11,15 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Container className="App">
-        <Profile/>
-        <AboutMe />
-        <Skills />
-      </Container>
+      <Routes>
+        <Route path='/'>
+          <Container className="App">
+            <Profile/>
+            <AboutMe />
+            <Skills />
+          </Container>
+        </Route>
+      </Routes>
     </>
   )
 }
