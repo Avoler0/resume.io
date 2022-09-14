@@ -12,13 +12,13 @@ function App() {
     <>
       <GlobalStyle />
       <Routes>
-        <Route path='/'>
-          <Container className="App">
+        <Route path='/' element={<Profile />} />
+          {/* <Container className="App">
             <Profile/>
             <AboutMe />
             <Skills />
-          </Container>
-        </Route>
+          </Container> */}
+        {/* </Route> */}
       </Routes>
     </>
   )
