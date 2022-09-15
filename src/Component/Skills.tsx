@@ -96,7 +96,6 @@ const BorderDiv = styled.div<{small?:boolean}>`
   display: ${props => props.small ? "inline-block" : "flex"};
   transition: all ease-out 0.2s;
   width: ${props => props.small ? "9rem" : "100%"};
-  flex-basis: fill;
   height: 6rem;
   margin-bottom: 0.3rem;
   text-align: center;
