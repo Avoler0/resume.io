@@ -12,6 +12,10 @@ import { ReactComponent as GitIco } from "../images/icons/git.svg"
 
 
 export default function Skills(){
+  const size = {
+    width:"68",
+    height:"90%"
+  }
   return (
     <SkillsDiv>
       <H3>Skills</H3>
@@ -20,53 +24,49 @@ export default function Skills(){
           <h4>Front-End</h4>
           <SkillWrap>
             <BorderDiv small >
-              <HtmlIco width="68" height="90%"/>
+              <HtmlIco {...size} />
             </BorderDiv>
             <BorderDiv small >
-              <CssIco width="68" height="90%"/>
+              <CssIco {...size}/>
             </BorderDiv>
             <BorderDiv small>
-              <JsIco width="68" height="90%" />
+              <JsIco {...size} />
             </BorderDiv>
           </SkillWrap>
           <SkillWrap>
             <BorderDiv small >
-              <TypeIco width="68" height="90%"/>
+              <TypeIco {...size}/>
             </BorderDiv>
             <BorderDiv small >
-              <StyleIco width="68" height="90%"/>
+              <StyleIco {...size} />
             </BorderDiv>
             <BorderDiv small style={{visibility :"hidden"}} />
           </SkillWrap>
           <SkillWrap>
             <BorderDiv>
-              <ReactIco width="68" height="90%" />
+              <ReactIco {...size} />
               <div style={{color:"#61dafb"}}>React</div>  
             </BorderDiv>
           </SkillWrap>
           <SkillWrap>
             <BorderDiv>
-              <ReduxIco width="68" height="90%" />
+              <ReduxIco {...size} />
               <div style={{color:"#764ABC"}}>Redux</div>  
             </BorderDiv>
-
           </SkillWrap>
-
-
         </Skill>
         <Skill>
-          <h4>Tools</h4>
+            <h4>Tools</h4>
             <BorderDiv>
-              <NotionIco width="68" height="90%" />
+              <NotionIco {...size} />
               <div>Notion</div>  
             </BorderDiv>
             <BorderDiv>
-              <GitIco width="68" height="90%" fill="#F05032" />
+              <GitIco {...size} fill="#F05032" />
               <div style={{color:"#F05032"}}>Git</div>  
             </BorderDiv>
         </Skill>
       </Content>
-
     </SkillsDiv>
   )
 }
@@ -94,6 +94,7 @@ const SkillWrap = styled.article`
 `;
 const BorderDiv = styled.div<{small?:boolean}>`
   display: ${props => props.small ? "inline-block" : "flex"};
+  transition: all ease-out 0.2s;
   width: ${props => props.small ? "9rem" : "100%"};
   flex-basis: fill;
   height: 6rem;
@@ -102,12 +103,9 @@ const BorderDiv = styled.div<{small?:boolean}>`
   align-items: center;
   border: 2px solid #CCCCCC;
   border-radius: 15px;
+  cursor: pointer;
   :hover{
-    transform: scale(1.1);
-    transition: all ease-out 0.2s;
-  }
-  :second-child{
-    
+    transform: scale(${props => props.small ? "1.08" : "1.05"});
   }
   svg{
     flex-grow: 0;
@@ -131,10 +129,12 @@ const BorderDiv = styled.div<{small?:boolean}>`
 
 const Skill = styled.div`
   width: 40%;
-  padding: 1rem;
+  padding: 2rem;
   border: 2px solid #CCCCCC;
   border-radius: 15px;
   h4{
+    font-size: 2rem;
     text-align: center;
+    margin: 1rem auto;
   }
 `;

@@ -16,11 +16,15 @@ export default function Profile(){
       </ul>
       <p>
         Email: 
-        <span> jys1391@gmail.com</span>
+        <span>jys1391@gmail.com</span>
       </p>
       <p>
         Blog:
-        <span> https://velog.io/@avoler</span>
+        <span>https://velog.io/@avoler</span>
+      </p>
+      <p>
+        Phone:
+        <span style={{letterSpacing:"1.8px"}}>010-5897-8991</span>
       </p>
     </Column>
   </ProfileDiv>
@@ -34,16 +38,31 @@ const Column = styled.div<{location:string}>`
   float: ${props => props.location};
   ul{
     padding: 0;
+    
   }
   li{
     display: inline-block;
     margin-right:1rem;
   }
+  svg{
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    :hover{
+      transform: scale(1.1);
+    }
+  }
   p{
     margin: 0;
+    letter-spacing: 1px;
     span{
       font-weight: 500;
       font-size: 1.1rem;
+      line-height: 1rem;
+      :hover{
+        cursor: pointer;
+        text-decoration: underline;
+        
+      }
     }
   }
 `

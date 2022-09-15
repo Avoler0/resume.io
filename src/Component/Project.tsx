@@ -5,6 +5,9 @@ export default function Project(){
   return (
     <ProjectDiv>
       <H3>Project</H3>
+      <Content>
+        콘텐츠
+      </Content>
     </ProjectDiv>
   )
 }
@@ -19,4 +22,8 @@ const H3 = styled.h3`
   color: gray;
   padding-bottom: 1.5rem;
   border-bottom: dashed 2px #CCCCCC;
+`;
+const Content = styled.div`
+  width: 90%;
+  margin: 0 auto;
 `;
