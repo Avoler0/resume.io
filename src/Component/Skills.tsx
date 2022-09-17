@@ -77,7 +77,7 @@ const Content = styled.div`
   width: 80%;
   margin: 0 auto;
   display:flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 const H3 = styled.h3`
   text-align: center;
@@ -127,13 +127,16 @@ const BorderDiv = styled.div<{small?:boolean}>`
 `;
 
 const Skill = styled.div`
-  width: 40%;
+  width: 45%;
   padding: 2rem;
   border: 2px solid #CCCCCC;
   border-radius: 15px;
   h4{
+    color: #87CEEB;
     font-size: 2rem;
-    text-align: center;
-    margin: 1rem auto;
+    text-align: left;
+    margin: 2.5rem auto;
+    margin-top: 0;
+    border-bottom: 1px solid #a09d9d;
   }
 `;
