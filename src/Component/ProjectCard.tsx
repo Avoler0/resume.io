@@ -1,20 +1,34 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { imgObj } from "../Const/Type";
 
 interface props {
   project:string,
   person:string
+  image:imgObj
+  Text:Function
 }
 
-export default function ProjectCard({project,person}:props){
-  const wewigg = "src/images/project/wewi.gg"
-  const wewiggImg = [`${wewigg}/image0.png`,`${wewigg}/image1.png`,`${wewigg}/image2.png`,`${wewigg}/image3.png`,`${wewigg}/image4.png`]
+export default function ProjectCard({project,person,image,Text}:props){
+  const [[slide, direction], setSlide] = React.useState([0, 0]);
+  const images = imageAssign()
+  const imageIndex = wrap(0,image.length,slide)
+
+  function imageAssign(){
+    const result = [];
+    for(let i = 0; i < image.length; i++){
+      result.push(`${image.path}${i}.${image.ext}`)
+    }
+    return result
+  }
+
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);
   };
-  const [[slide, direction], setSlide] = React.useState([0, 0]);
+
+
   const boxVariants = {
     enter: () => {
       return {
@@ -33,17 +47,17 @@ export default function ProjectCard({project,person}:props){
       };
     }
   };
-  const imageIndex = wrap(0,wewiggImg.length,slide)
+  
   return (
      <CardDiv>
-          <Name>wewi.gg</Name>
-          <Person>개인 프로젝트</Person>
+          <Name>{project}</Name>
+          <Person>{person} 프로젝트</Person>
           <ProjectContent>
             <AnimatePresence initial={false} custom={false} >
               <ImageDiv>
                 <motion.img 
                   key={slide}
-                  src={wewiggImg[imageIndex]}
+                  src={images[imageIndex]}
                   variants={boxVariants}
                   initial="enter"
                   animate="center"
@@ -57,10 +71,7 @@ export default function ProjectCard({project,person}:props){
               </ImageDiv>
             </AnimatePresence>
             <Description>
-              <p>wewi.gg는 <strong>League of Legend 게임의 전적을 조회하고 , 같이 게임을 할 사람을 구하는 서비스</strong>입니다.</p>
-              <p>Riot Games에서 제공하는 API를 이용하여 만든 전적검색 & 듀오구인 사이트</p>
-              <p>Redux를 이용하여 로그인 전역상태 관리</p>
-              <p>REstful API</p>
+              <Text />
             </Description>
           </ProjectContent>
         </CardDiv>
@@ -76,6 +87,7 @@ const CardDiv = styled.div`
   padding: 1rem;
   border: 2px solid #CCCCCC;
   border-radius: 1.2rem;
+  margin-bottom: 2rem;
 `;
 const Name = styled.span`
   font-size: 2.4rem;
@@ -92,7 +104,6 @@ const ProjectContent = styled.div`
   margin: 3rem 0;
   display: flex;
   justify-content: space-between;
-  
 `;
 
 const ImageDiv = styled.div`
