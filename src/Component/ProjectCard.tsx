@@ -3,6 +3,7 @@ import { wrap } from "popmotion";
 import React from "react";
 import styled, { css } from "styled-components";
 import { imgObj } from "../Const/Type";
+import { ReactComponent as GithubIco } from "../images/icons/github.svg"
 
 interface props {
   project:string,
@@ -48,6 +49,13 @@ export default function ProjectCard({project,person,image,Text}:props){
     }
   };
   
+  function renderEmbed(url:string){
+    return(
+      <Link>
+        프로젝트 깃 허브 임베드 공간
+      </Link>
+    )
+  }
   return (
      <CardDiv>
           <Name>{project}</Name>
@@ -72,6 +80,10 @@ export default function ProjectCard({project,person,image,Text}:props){
             </AnimatePresence>
             <Description>
               <Text />
+              <Link>
+                <GitSvg><GithubIco /></GitSvg>
+                <URL><a href={image.git}>{image.git}</a></URL>
+              </Link>
             </Description>
           </ProjectContent>
         </CardDiv>
@@ -100,7 +112,6 @@ const Person = styled.span`
 `;
 const ProjectContent = styled.div`
   width: 100%;
-  height: 100%;
   margin: 3rem 0;
   display: flex;
   justify-content: space-between;
@@ -153,17 +164,42 @@ const SlideButton = styled.button<{prev?:boolean,next?:boolean}>`
   }
 `;
 const Description = styled.div`
+  position: relative;
   flex-grow: 2;
   flex-wrap: wrap;
   width: 50%;
   font-size: 1.05rem;
   font-weight: normal;
   p{
-    margin: 0;
     line-height: 1.5rem;
   }
   strong{
     font-size: 1rem;
     font-weight: 600;
   }
+`;
+const Link = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  border: 1px solid #cccccc;
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-decoration: underline;
+  div{
+    display: inline-block;
+  }
+
+`;
+const GitSvg = styled.div`
+  padding: 1rem;
+  border-right: 1px solid #cccccc;
+  svg{
+    width: 2rem;
+  }
+
+`;
+const URL = styled.div`
+  margin: 0 auto;
 `;

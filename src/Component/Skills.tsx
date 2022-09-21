@@ -9,7 +9,7 @@ import { ReactComponent as TypeIco } from "../images/icons/typescript.svg"
 import { ReactComponent as StyleIco } from "../images/icons/styled-components.svg"
 import { ReactComponent as ReduxIco } from "../images/icons/redux.svg"
 import { ReactComponent as GitIco } from "../images/icons/git.svg"
-
+import { H3 } from "./CommonStyle";
 
 export default function Skills(){
   const size = {
@@ -17,7 +17,7 @@ export default function Skills(){
     height:"90%"
   }
   return (
-    <SkillsDiv>
+    <div>
       <H3>Skills</H3>
       <Content>
         <Skill>
@@ -67,26 +67,17 @@ export default function Skills(){
             </BorderDiv>
         </Skill>
       </Content>
-    </SkillsDiv>
+    </div>
   )
 }
-const SkillsDiv = styled.div`
 
-`;
 const Content = styled.div`
   width: 80%;
   margin: 0 auto;
   display:flex;
   justify-content: space-around;
 `;
-const H3 = styled.h3`
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: gray;
-  padding-bottom: 1.5rem;
-  border-bottom: dashed 2px #CCCCCC;
-`;
+
 const SkillWrap = styled.article`
   display: flex;
   justify-content: space-between;

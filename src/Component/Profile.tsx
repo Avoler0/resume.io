@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { ReactComponent as GithubIco } from "../images/icons/github.svg"
 import { ReactComponent as VelogIco } from "../images/icons/velog.svg"
+
 export default function Profile(){
 
  return(
-  <ProfileDiv id="Profile">
+  <div style={{marginTop:"3rem" , height:"9rem"}}>
     <Column location="left">
       <H1>정윤서</H1>
       <H2>Front-End 개발자</H2>
@@ -27,13 +28,10 @@ export default function Profile(){
         <span style={{letterSpacing:"1.8px"}}>010-5897-8991</span>
       </p>
     </Column>
-  </ProfileDiv>
+  </div>
  ) 
 }
-const ProfileDiv = styled.div`
-  margin-top: 3rem;
-  height: 9rem;
-`;
+
 const Column = styled.div<{location:string}>`
   float: ${props => props.location};
   ul{

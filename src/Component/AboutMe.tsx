@@ -1,35 +1,26 @@
 import styled from "styled-components"
 import JungYunSeo from "../images/jungyunseo.jpg"
+import { H3 } from "./CommonStyle";
+
 export default function AboutMe(){
   return (
-    <AboutDiv>
+    <div>
       <H3>About Me</H3>
       <Content>
         <Image src={JungYunSeo} />
         <Info>
           <Text>
-            {/* <p>안녕하세요. 프론트엔드 개발자 정윤서입니다.</p>
-            <p>프론트엔드의 지식에 대한 열망이 아주 강합니다.</p>
-            <p>배우는 것을 좋아하며 배운 지식을 나누거나 곱씹어 재정리하는것을 좋아합니다.</p>
-            <p>꾸준함을 중점으로 포기하지 않으며 목표에 대해 전진합니다.</p> */}
+            <p><strong>안녕하세요, 저는 정윤서입니다.</strong></p>
+            <p>새로운 지식을 터득하는 것을 좋아합니다.</p>
+            <p>개발자는 바뀌는 트렌드를 읽고 곧 바로 터득하는 것이 힘이라고 생각합니다. </p>
           </Text>
         </Info>
       </Content>
-    </AboutDiv>
+    </div>
   )
 }
 
-const AboutDiv = styled.div`
 
-`;
-const H3 = styled.h3`
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: gray;
-  padding-bottom: 1.5rem;
-  border-bottom: dashed 2px #CCCCCC;
-`;
 const Content = styled.div`
   margin-left: 2rem;
   display: flex;
@@ -43,6 +34,9 @@ const Info = styled.div`
   p{
     font-size: 1.2rem;
     font-weight: 500;
+  }
+  strong{
+    font-size: 1.5rem;
   }
 `;
 const Text = styled.div`
