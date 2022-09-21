@@ -1,6 +1,6 @@
 import { imgObj } from "./Type"
 
-const Path = "./src/images/project"
+const Path = "../src/images/project"
 
 
 

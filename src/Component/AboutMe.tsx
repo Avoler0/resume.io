@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import JungYunSeo from "../images/jungyunseo.jpg"
 import { H3 } from "./CommonStyle";
 
 export default function AboutMe(){
@@ -7,7 +6,7 @@ export default function AboutMe(){
     <div>
       <H3>About Me</H3>
       <Content>
-        <Image src={JungYunSeo} />
+        <Image src="../src/images/jungyunseo.jpg" />
         <Info>
           <Text>
             <p><strong>안녕하세요, 저는 정윤서입니다.</strong></p>
