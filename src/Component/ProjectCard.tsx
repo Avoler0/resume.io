@@ -2,28 +2,19 @@ import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
 import React from "react";
 import styled, { css } from "styled-components";
-import { imgObj } from "../Const/Type";
 import { ReactComponent as GithubIco } from "../images/icons/github.svg"
 
 interface props {
   project:string,
-  person:string
-  image:imgObj
-  Text:Function
+  person:string,
+  image:string[],
+  Text:Function,
+  git:string
 }
 
-export default function ProjectCard({project,person,image,Text}:props){
+export default function ProjectCard({project,person,image,Text,git}:props){
   const [[slide, direction], setSlide] = React.useState([0, 0]);
-  const images = imageAssign()
   const imageIndex = wrap(0,image.length,slide)
-
-  function imageAssign(){
-    const result = [];
-    for(let i = 0; i < image.length; i++){
-      result.push(`${image.path}${i}.${image.ext}`)
-    }
-    return result
-  }
 
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);
@@ -65,7 +56,7 @@ export default function ProjectCard({project,person,image,Text}:props){
               <ImageDiv>
                 <motion.img 
                   key={slide}
-                  src={images[imageIndex]}
+                  src={image[imageIndex]}
                   variants={boxVariants}
                   initial="enter"
                   animate="center"
@@ -82,7 +73,7 @@ export default function ProjectCard({project,person,image,Text}:props){
               <Text />
               <Link>
                 <GitSvg><GithubIco /></GitSvg>
-                <URL><a href={image.git}>{image.git}</a></URL>
+                <URL><a href={git}>{git}</a></URL>
               </Link>
             </Description>
           </ProjectContent>

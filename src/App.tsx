@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components'
 import AboutMe from './Component/AboutMe';
 import Career from './Component/Career';
@@ -13,11 +13,11 @@ function App() {
     <>
       <GlobalStyle />
       <Container className="App">
-            <Profile/>
-            <AboutMe />
-            <Skills />
-            <Project />
-            <Career />
+        <Profile/>
+        <AboutMe />
+        <Skills />
+        <Project />
+        <Career />
       </Container>
     </>
   )
