@@ -317,7 +317,7 @@ Error generating stack: `+i.message+`
     line-height: 1.5;
     margin: 0;
   }
-`;function sC(){return W(rn,{children:[P(iC,{}),P(lC,{className:"App",children:P(Wy,{children:W(b0,{path:"/",children:[P(Z2,{}),P(b2,{}),P(rC,{}),P(G5,{}),P(K2,{})]})})})]})}const lC=pe.div`
+`;function sC(){return W(rn,{children:[P(iC,{}),P(lC,{className:"App",children:P(Wy,{children:W(b0,{path:"resume.io/",children:[P(Z2,{}),P(b2,{}),P(rC,{}),P(G5,{}),P(K2,{})]})})})]})}const lC=pe.div`
   width: 1200px;
   height: auto;
   margin: 0 auto;
