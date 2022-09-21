@@ -121,7 +121,7 @@ const ImageDiv = styled.div`
   position: relative;
   flex-grow: 0;
   width: 50%;
-  height: 20rem;
+  height: 25rem;
   text-align: center;
   border: 1px solid #CCCCCC;
   border-radius: 1rem;
@@ -168,6 +168,7 @@ const Description = styled.div`
   flex-grow: 2;
   flex-wrap: wrap;
   width: 50%;
+  height: 25rem;
   font-size: 1.05rem;
   font-weight: normal;
   p{
@@ -179,6 +180,7 @@ const Description = styled.div`
   }
 `;
 const Link = styled.div`
+  position: absolute;
   display: flex;
   align-items: center;
   width: 100%;
