@@ -13,15 +13,11 @@ function App() {
     <>
       <GlobalStyle />
       <Container className="App">
-        <Routes>
-          <Route path="/" >
             <Profile/>
             <AboutMe />
             <Skills />
             <Project />
             <Career />
-          </Route>
-        </Routes>
       </Container>
     </>
   )
