@@ -15,7 +15,10 @@ interface props {
 export default function ProjectCard({project,person,image,Text,git}:props){
   const [[slide, direction], setSlide] = React.useState([0, 0]);
   const imageIndex = wrap(0,image.length,slide)
-
+  const [imageClick,setImageClick] = React.useState<string | null>(null);
+  function clickImage(props:any){
+    setImageClick(props)
+  }
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);
   };
@@ -39,49 +42,84 @@ export default function ProjectCard({project,person,image,Text,git}:props){
       };
     }
   };
-  
-  function renderEmbed(url:string){
-    return(
-      <Link>
-        프로젝트 깃 허브 임베드 공간
-      </Link>
-    )
-  }
   return (
      <CardDiv>
-          <Name>{project}</Name>
-          <Person>{person} 프로젝트</Person>
-          <ProjectContent>
-            <AnimatePresence initial={false} custom={false} >
-              <ImageDiv>
-                <motion.img 
-                  key={slide}
-                  src={image[imageIndex]}
-                  variants={boxVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                  }}
-                  />
-                  <SlideButton prev onClick={() => paginate(-1)}>{"‣"}</SlideButton>
-                  <SlideButton next onClick={() => paginate(1)}>{"‣"}</SlideButton>
-              </ImageDiv>
-            </AnimatePresence>
-            <Description>
-              <Text />
-              <Link>
-                <GitSvg><GithubIco /></GitSvg>
-                <URL><a href={git}>{git}</a></URL>
-              </Link>
-            </Description>
-          </ProjectContent>
-        </CardDiv>
+      <Name>{project}</Name>
+      <Person>{person} 프로젝트</Person>
+      <ProjectContent>
+        <AnimatePresence initial={false} custom={false} >
+          <ImageDiv big={imageClick}>
+            <motion.img
+              onClick={()=>clickImage(project+slide)}
+              layoutId={project+slide}
+              key={slide}
+              src={image[imageIndex]}
+              variants={boxVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+              }}
+              />
+              <SlideButton prev onClick={() => paginate(-1)}>{"‣"}</SlideButton>
+              <SlideButton next onClick={() => paginate(1)}>{"‣"}</SlideButton>
+          </ImageDiv>
+        </AnimatePresence>
+        <Description>
+          <Text />
+          <Link>
+            <GitSvg><GithubIco /></GitSvg>
+            <URL><a href={git}>{git}</a></URL>
+          </Link>
+        </Description>
+        
+      </ProjectContent>
+      {imageClick && 
+      <>
+        <Overlay onClick={()=>{setImageClick(null)}}/>
+          <ClickImage
+            onClick={()=>{setImageClick(null)}}
+            layoutId={project+slide}
+            key={slide}
+            src={image[imageIndex]}
+                variants={boxVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                }}
+            />
+            <SlideButton prev onClick={() => paginate(-1)}>{"‣"}</SlideButton>
+            <SlideButton next onClick={() => paginate(1)}>{"‣"}</SlideButton>
+      </>
+      }
+    </CardDiv>
     )
 }
-
+const Overlay = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 1.2rem;
+  background-color: white;
+`;
+const ClickImage = styled(motion.img)`
+  position: absolute;
+  margin: auto auto;
+  z-index: 2;
+  object-fit: contain;
+  width: 80%;
+  height: 90%;
+`;
 const CardDiv = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,8 +146,9 @@ const ProjectContent = styled.div`
   justify-content: space-between;
 `;
 
-const ImageDiv = styled.div`
+const ImageDiv = styled.div<{big:any}>`
   position: relative;
+  display: ${props => props.big ? "none" : "block"};
   flex-grow: 0;
   width: 50%;
   height: 25rem;

@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 import {image} from "../Const/Images";
 import { project } from "../Const/Text";
 import { H3 } from "./CommonStyle";
-import { github } from "../Const/GithubUrl";
+import { github } from "../Const/Github";
 
 export default function Project(){
   return (
