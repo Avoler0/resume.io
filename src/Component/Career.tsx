@@ -9,7 +9,7 @@ export default function Career(){
         <Name>
           <h4>세종컴퓨터학원</h4>
           <div>C/C++ 프로그래밍 과정</div>
-          <div style={{color:"#cccccc"}}>2021.03 - 2022.02</div>
+          <div style={{color:"#cccccc"}}>2021.06 - 2022.02</div>
         </Name>
         <Description>
           <ul>
@@ -44,26 +44,42 @@ export default function Career(){
 }
 
 const Content = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 2rem auto;
+  padding: 2rem;
   border-bottom: 1px solid #cccccc;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 const Name = styled.div`
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
   h4{
     font-size: 2rem;
     margin: 0;
   }
   div{
     text-align: right;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 `;
 const Description = styled.div`
   width: 60%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   ul{
     margin: 0;
     margin-bottom: 2rem;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
   h4{
     margin: 0.5rem 0;

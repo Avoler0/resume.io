@@ -73,7 +73,6 @@ export default function ProjectCard({project,person,image,Text,git}:props){
             <URL><a href={git}>{git}</a></URL>
           </Link>
         </Description>
-        
       </ProjectContent>
       {imageClick && 
       <>
@@ -109,6 +108,7 @@ const Overlay = styled.div`
   top: 0;
   border-radius: 1.2rem;
   background-color: white;
+
 `;
 const ClickImage = styled(motion.img)`
   position: absolute;
@@ -117,6 +117,7 @@ const ClickImage = styled(motion.img)`
   object-fit: contain;
   width: 80%;
   height: 90%;
+  
 `;
 const CardDiv = styled.div`
   position: relative;
@@ -129,6 +130,7 @@ const CardDiv = styled.div`
   border: 2px solid #CCCCCC;
   border-radius: 1.2rem;
   margin-bottom: 2rem;
+
 `;
 const Name = styled.span`
   font-size: 2.4rem;
@@ -144,11 +146,14 @@ const ProjectContent = styled.div`
   margin: 3rem 0;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const ImageDiv = styled.div<{big:any}>`
   position: relative;
-  display: ${props => props.big ? "none" : "block"};
+  
   flex-grow: 0;
   width: 50%;
   height: 25rem;
@@ -156,12 +161,19 @@ const ImageDiv = styled.div<{big:any}>`
   border: 1px solid #CCCCCC;
   border-radius: 1rem;
   margin-right: 3rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 15rem;
+  }
   img{
     position: absolute; top:0; left: 0;
     object-fit: contain;
     width: 100%;
     height: 100%;
     :after{display:inline-block; height:100%; content:""; vertical-align:middle;}
+  }
+  button{
+    display: ${props => props.big ? "none" : "block"};
   }
 `;
 const SlideButton = styled.button<{prev?:boolean,next?:boolean}>`
@@ -198,9 +210,12 @@ const Description = styled.div`
   flex-grow: 2;
   flex-wrap: wrap;
   width: 50%;
-  height: 25rem;
   font-size: 1.05rem;
   font-weight: normal;
+  padding-bottom: 5rem;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   p{
     line-height: 1.5rem;
   }

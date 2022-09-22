@@ -5,7 +5,7 @@ import { ReactComponent as VelogIco } from "../images/icons/velog.svg"
 export default function Profile(){
 
  return(
-  <div style={{marginTop:"3rem" , height:"9rem"}}>
+  <ProcfileDiv>
     <Column location="left">
       <H1>정윤서</H1>
       <H2>Front-End 개발자</H2>
@@ -28,12 +28,23 @@ export default function Profile(){
         <span style={{letterSpacing:"1.8px"}}>010-5897-8991</span>
       </p>
     </Column>
-  </div>
+  </ProcfileDiv>
  ) 
 }
-
+const ProcfileDiv = styled.div`
+  margin-top: 3rem;
+  height: 9rem;
+  @media (max-width: 768px) {
+    margin:0;
+    padding: 1rem;
+    height: 16rem;
+  }
+`;
 const Column = styled.div<{location:string}>`
   float: ${props => props.location};
+  @media (max-width: 768px) {
+    float: none;
+  }
   ul{
     padding: 0;
     

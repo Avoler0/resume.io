@@ -76,12 +76,16 @@ const Content = styled.div`
   margin: 0 auto;
   display:flex;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const SkillWrap = styled.article`
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
+
 `;
 const BorderDiv = styled.div<{small?:boolean}>`
   display: ${props => props.small ? "inline-block" : "flex"};
@@ -108,11 +112,8 @@ const BorderDiv = styled.div<{small?:boolean}>`
     align-items: center;
     font-size: 3rem;
     font-weight: 700;
-    ::before{
-      display: inline-block;
-      content: "";
-      height: 100%;
-      vertical-align: middle;
+    @media (max-width: 768px) {
+      font-size: 2rem;
     }
   }
 `;
@@ -122,12 +123,18 @@ const Skill = styled.div`
   padding: 2rem;
   border: 2px solid #CCCCCC;
   border-radius: 15px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   h4{
     color: #87CEEB;
-    font-size: 2rem;
+    
     text-align: left;
     margin: 2.5rem auto;
     margin-top: 0;
     border-bottom: 1px solid #a09d9d;
+
   }
 `;

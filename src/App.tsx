@@ -27,6 +27,10 @@ const Container = styled.div`
   width: 1200px;
   height: auto;
   margin: 0 auto;
+  padding-bottom: 10rem;
+  @media (max-width: 768px) {
+    width: auto;
+  }
 `;
 
 export default App
