@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
-import React from "react";
+import React, { useRef } from "react";
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as GithubIco } from "../images/icons/github.svg"
 
 interface props {
@@ -14,16 +15,29 @@ interface props {
 
 export default function ProjectCard({project,person,image,Text,git}:props){
   const [[slide, direction], setSlide] = React.useState([0, 0]);
+  const [scrollY, setScrollY] = React.useState(0);
   const imageIndex = wrap(0,image.length,slide)
   const [imageClick,setImageClick] = React.useState<string | null>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   function clickImage(props:any){
+    setScrollY(window.pageYOffset)
+    setTimeout(()=>{
+      imageRef.current?.scrollIntoView();
+    },100)
+    document.body.style = `overflow: hidden`;
     setImageClick(props)
+  }
+  function clickModal(){
+     window.scrollTo(scrollY,scrollY)
+    setImageClick(null)
+    document.body.style = `overflow: auto`;
   }
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);
   };
-
-
+  React.useEffect(()=>{
+    document.body.style = `overflow: auto`;
+  },[])
   const boxVariants = {
     enter: () => {
       return {
@@ -66,18 +80,22 @@ export default function ProjectCard({project,person,image,Text,git}:props){
               <SlideButton next onClick={() => paginate(1)}>{"‣"}</SlideButton>
           </ImageDiv>
         </AnimatePresence>
-        <Description>
+        <Description big={imageClick}>
           <Text />
-          <Link>
-            <GitSvg><GithubIco /></GitSvg>
-            <URL><a href={git}>{git}</a></URL>
-          </Link>
+          <LinkDiv>
+            <GitSvg>
+              <GithubIco />
+            </GitSvg>
+            <URL>
+              <a href={git}>{git}</a>
+            </URL>
+          </LinkDiv>
         </Description>
       </ProjectContent>
       {imageClick && 
-      <>
-        <Overlay onClick={()=>{setImageClick(null)}}/>
-          <ClickImage
+        <BigImage ref={imageRef} id="bigImage">
+          <Overlay onClick={clickModal}/>
+            <ClickImage
             onClick={()=>{setImageClick(null)}}
             layoutId={project+slide}
             key={slide}
@@ -92,32 +110,50 @@ export default function ProjectCard({project,person,image,Text,git}:props){
             />
             <SlideButton prev onClick={() => paginate(-1)}>{"‣"}</SlideButton>
             <SlideButton next onClick={() => paginate(1)}>{"‣"}</SlideButton>
-      </>
+        </BigImage>
       }
     </CardDiv>
     )
 }
-const Overlay = styled.div`
-  position: absolute;
+const BigImage = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
+  position: absolute;
   justify-content: center;
   text-align: center;
   align-items: center;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-radius: 1.2rem;
+  z-index: 10;
+  @media (max-width: 768px) {
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100vh;
+    height: 100vw;
+    /* top: 100%;
+    left: 0;
+    width: 100vh;
+    height: 100vw; */
+  }
+`;
+const Overlay = styled.div`
   width: 100%;
   height: 100%;
+  position: absolute;
   top: 0;
-  border-radius: 1.2rem;
-  background-color: white;
-
 `;
 const ClickImage = styled(motion.img)`
-  position: absolute;
   margin: auto auto;
-  z-index: 2;
   object-fit: contain;
   width: 80%;
   height: 90%;
-  
+
 `;
 const CardDiv = styled.div`
   position: relative;
@@ -130,7 +166,9 @@ const CardDiv = styled.div`
   border: 2px solid #CCCCCC;
   border-radius: 1.2rem;
   margin-bottom: 2rem;
-
+  @media (max-width: 768px) {
+    position: static;
+  }
 `;
 const Name = styled.span`
   font-size: 2.4rem;
@@ -152,8 +190,8 @@ const ProjectContent = styled.div`
 `;
 
 const ImageDiv = styled.div<{big:any}>`
+  visibility: ${props => props.big ? "hidden" : "visible"};
   position: relative;
-  
   flex-grow: 0;
   width: 50%;
   height: 25rem;
@@ -205,7 +243,8 @@ const SlideButton = styled.button<{prev?:boolean,next?:boolean}>`
    `
   }
 `;
-const Description = styled.div`
+const Description = styled.div<{big:any}>`
+  visibility: ${props => props.big ? "hidden" : "visible"};
   position: relative;
   flex-grow: 2;
   flex-wrap: wrap;
@@ -224,7 +263,7 @@ const Description = styled.div`
     font-weight: 600;
   }
 `;
-const Link = styled.div`
+const LinkDiv = styled.div`
   position: absolute;
   display: flex;
   align-items: center;

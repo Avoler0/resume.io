@@ -1,25 +1,17 @@
-import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './Layout';
 import styled from 'styled-components'
-import AboutMe from './Component/AboutMe';
-import Career from './Component/Career';
-import Profile from './Component/Profile';
-import Project from './Component/Project';
-import Skills from './Component/Skills';
 import GlobalStyle from './GlobalStyle';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle />
-      <Container className="App">
-        <Profile/>
-        <AboutMe />
-        <Skills />
-        <Project />
-        <Career />
-      </Container>
-    </>
+      <Routes>
+        <Route path='/' element={<Layout />}/>
+        <Route path='/:imageid' element={<Layout />}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
