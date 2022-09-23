@@ -24,13 +24,13 @@ export default function ProjectCard({project,person,image,Text,git}:props){
     setTimeout(()=>{
       imageRef.current?.scrollIntoView();
     },100)
-    document.body.style = `overflow: hidden`;
+    document.body.style.cssText  = `overflow: hidden`;
     setImageClick(props)
   }
   function clickModal(){
      window.scrollTo(scrollY,scrollY)
     setImageClick(null)
-    document.body.style = `overflow: auto`;
+    document.body.style.cssText  = `overflow: auto`;
   }
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);

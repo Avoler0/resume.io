@@ -7,10 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Routes>
-        <Route path='/' element={<Layout />}/>
-        <Route path='/:imageid' element={<Layout />}/>
-      </Routes>
+      <Layout />
     </BrowserRouter>
   )
 }
