@@ -35,9 +35,6 @@ export default function ProjectCard({project,person,image,Text,git}:props){
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);
   };
-  React.useEffect(()=>{
-    document.body.style = `overflow: auto`;
-  },[])
   const boxVariants = {
     enter: () => {
       return {
