@@ -12,20 +12,28 @@ export default function Profile(){
     </Column>
     <Column location="right">
       <ul>
-        <li><GithubIco width="40" fill="#181717"/></li>
-        <li><VelogIco width="40" fill="#20C997" /></li>
+        <li>
+          <a href="https://github.com/Avoler0" target="_blank">
+            <GithubIco width="40" fill="#181717"/>
+          </a>
+        </li>
+        <a href="https://velog.io/@avoler" target="_blank">
+          <li>
+            <VelogIco width="40" fill="#20C997" />
+          </li>
+        </a>
       </ul>
+      <p>
+        Birth: 
+        <span>1998.01.10</span>
+      </p>
       <p>
         Email: 
         <span>jys1391@gmail.com</span>
       </p>
       <p>
-        Blog:
-        <span>https://velog.io/@avoler</span>
-      </p>
-      <p>
         Phone:
-        <span style={{letterSpacing:"1.8px"}}>010-5897-8991</span>
+          <span style={{letterSpacing:"1.8px"}}>010-5897-8991</span>
       </p>
     </Column>
   </ProcfileDiv>

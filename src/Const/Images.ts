@@ -33,7 +33,7 @@ export const image = {
   wewigg: [
     `${path}/191460419-ff9db7b9-e1ea-402f-be98-8be5fd572cb7.png`,
     `${path}/191460463-d8402e3b-1426-494f-a7cb-e651dc5f276f.png`,
-    `${path}/191460579-83b45642-6bfb-4070-94b7-e71c5aa054f2.png`,
+    `${path}/192073264-a9ed0f83-31b9-40d8-91e3-d4d58d319260.png`,
     `${path}/191460594-3f30d537-94e0-47bb-816e-0cff2ade82ba.png`,
     `${path}/191460608-cac1d745-bbef-470d-bc07-36d99ab23deb.png`
   ],

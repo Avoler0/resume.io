@@ -84,7 +84,7 @@ export default function ProjectCard({project,person,image,Text,git}:props){
               <GithubIco />
             </GitSvg>
             <URL>
-              <a href={git}>{git}</a>
+              <a href={git} target="_blank">{git}</a>
             </URL>
           </LinkDiv>
         </Description>
