@@ -24,13 +24,14 @@ export default function ProjectCard({project,person,image,Text,git}:props){
     setTimeout(()=>{
       imageRef.current?.scrollIntoView();
     },100)
-    document.body.style.cssText  = `overflow: hidden`;
+    document.body.style.overflow  = `hidden`;
     setImageClick(props)
   }
   function clickModal(){
-     window.scrollTo(scrollY,scrollY)
+    window.scrollTo(scrollY,scrollY)
+    document.body.style.cssText  = `auto`;
     setImageClick(null)
-    document.body.style.cssText  = `overflow: auto`;
+    
   }
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);
@@ -91,9 +92,8 @@ export default function ProjectCard({project,person,image,Text,git}:props){
       </ProjectContent>
       {imageClick && 
         <BigImage ref={imageRef} id="bigImage">
-          <Overlay onClick={clickModal}/>
+          <Overlay onClick={clickModal} />
             <ClickImage
-            onClick={()=>{setImageClick(null)}}
             layoutId={project+slide}
             key={slide}
             src={image[imageIndex]}
