@@ -14,24 +14,19 @@ interface props {
 }
 
 export default function ProjectCard({project,person,image,Text,git}:props){
+  const Mobile = document.body.clientWidth < 768;
   const [[slide, direction], setSlide] = React.useState([0, 0]);
   const [scrollY, setScrollY] = React.useState(0);
   const imageIndex = wrap(0,image.length,slide)
   const [imageClick,setImageClick] = React.useState<string | null>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  
   function clickImage(props:any){
-    setScrollY(window.pageYOffset)
-    setTimeout(()=>{
-      imageRef.current?.scrollIntoView();
-    },100)
-    document.body.style.overflow  = `hidden`;
+    if(Mobile) return
     setImageClick(props)
   }
   function clickModal(){
-    window.scrollTo(scrollY,scrollY)
-    document.body.style.cssText  = `auto`;
     setImageClick(null)
-    
   }
   const paginate = (newDirection: number) => {
     setSlide([slide + newDirection, newDirection]);
@@ -125,19 +120,6 @@ const BigImage = styled.div`
   background-color: white;
   border-radius: 1.2rem;
   z-index: 10;
-  @media (max-width: 768px) {
-    transform: rotate(-90deg);
-    transform-origin: top left;
-    top: 100%;
-    left: 0;
-    right: 0;
-    width: 100vh;
-    height: 100vw;
-    /* top: 100%;
-    left: 0;
-    width: 100vh;
-    height: 100vw; */
-  }
 `;
 const Overlay = styled.div`
   width: 100%;
