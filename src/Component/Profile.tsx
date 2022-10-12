@@ -6,9 +6,14 @@ export default function Profile(){
 
  return(
   <ProcfileDiv>
-    <Column location="left">
-      <H1>정윤서</H1>
-      <H2>Front-End 개발자</H2>
+    <Column location="left" >
+        <H1>정윤서</H1>
+        <H2>Front-End 개발자</H2>
+    </Column>
+    <Column location="left" >
+      <ImageDiv>
+        <Image src="https://user-images.githubusercontent.com/91608021/191460061-03d70fd9-aa6b-48f5-8b4c-14cf124540d2.jpg" />
+      </ImageDiv>
     </Column>
     <Column location="right">
       <ul>
@@ -40,15 +45,30 @@ export default function Profile(){
  ) 
 }
 const ProcfileDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
   margin-top: 3rem;
-  height: 9rem;
+  height: 10rem;
   @media (max-width: 768px) {
     margin:0;
     padding: 1rem;
     height: 16rem;
   }
 `;
+const ImageDiv = styled.div`
+  text-align: center;
+`;
+const Image = styled.img`
+  width: 150px;
+  border-radius: 150px;
+  @media (max-width: 768px) {
+    width: 300px;
+    margin: 0;
+    border-radius: 300px;
+  }
+`;
 const Column = styled.div<{location:string}>`
+  /* display: ${props => props.location === "left" ? "flex" : "block"}; */
   float: ${props => props.location};
   @media (max-width: 768px) {
     float: none;
@@ -85,11 +105,11 @@ const Column = styled.div<{location:string}>`
 `
 const H1 = styled.h1`
   margin: 0;
-  font-size: 1.9rem;
+  font-size: 2.2rem;
   font-weight: 600;
 `;
 const H2 = styled.h1`
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 500;
 `;

@@ -16,7 +16,6 @@ interface props {
 export default function ProjectCard({project,person,image,Text,git}:props){
   const Mobile = document.body.clientWidth < 768;
   const [[slide, direction], setSlide] = React.useState([0, 0]);
-  const [scrollY, setScrollY] = React.useState(0);
   const imageIndex = wrap(0,image.length,slide)
   const [imageClick,setImageClick] = React.useState<string | null>(null);
   const imageRef = useRef<HTMLDivElement>(null);
