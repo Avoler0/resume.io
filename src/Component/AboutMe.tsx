@@ -2,8 +2,7 @@ import styled from "styled-components"
 import { H3 } from "./CommonStyle";
 
 export default function AboutMe(){
-  const selfText = `웹 프론트엔드 개발을 독학으로 입문하였으며
-꾸준한 Git Commit으로 매일 발전해 나아가는 개발자 정윤서입니다.
+  const selfText = `꾸준한 Git Commit으로 매일 발전해 나아가는 개발자 정윤서입니다.
 저는 어려서부터 내가 직접 만든 결과물에 대해 흥미가 많았습니다.
 고등학교 졸업 후 진로에 대한 고민을 하던 중에 내가 흥미가 있고 관심이 있는 것에 대해 일을 할 때 좋은 결과를 낼 수 있다고 생각하여
 이전부터 제가 관심 있던 프로그래밍을 시작하였고, 지금까지 이어오고 있으며 그 꿈을 실현하기 위해 개발자를 준비하고 있습니다.`
@@ -16,11 +15,11 @@ export default function AboutMe(){
 개발자에게 소통은 중요한 요소입니다.
 코드 리뷰를 통한 팀원들과의 코드 공유, 이해를 하고
 각 분야의 개발자들과 협업을 진행하니 트러블 없는 이해관계가 중요하다고 여깁니다.
-그리고 프런트엔드 기술은 6개월마다 변화를 맞이합니다
+그리고 프런트엔드 기술은 빠르게 변화를 맞이합니다.
 이 변화에 빠르게 따라가고 적응할 수 있는 개발자가 되고 싶습니다.
 이러한 개발자가 되기 위해서는 Resourceful 하게 주도적으로 개발을 진행할 수 있는 개발자라고 생각합니다.`
   return (
-    <div>
+    <Container>
       <H3>About Me</H3>
       <Content>
         <MyContent>
@@ -42,10 +41,15 @@ export default function AboutMe(){
           </Text>
         </MyContent>
       </Content>
-    </div>
+    </Container>
   )
 }
-
+const Container = styled.div`
+  margin: 5rem auto;
+  @media (max-width: 768px) {
+    margin: 15rem auto;
+  }
+`;
 const Content = styled.div`
   width: 90%;
   margin: 0 auto;

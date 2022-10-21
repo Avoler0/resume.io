@@ -9,12 +9,16 @@ import { ReactComponent as TypeIco } from "../images/icons/typescript.svg"
 import { ReactComponent as StyleIco } from "../images/icons/styled-components.svg"
 import { ReactComponent as ReduxIco } from "../images/icons/redux.svg"
 import { ReactComponent as GitIco } from "../images/icons/git.svg"
+import { ReactComponent as NextJsIco } from "../images/icons/nextjs.svg"
 import { H3 } from "./CommonStyle";
 
 export default function Skills(){
   const size = {
     width:"68",
-    height:"90%"
+    height:"90%",
+    nextjs:{
+      height:"99%"
+    }
   }
   return (
     <div>
@@ -52,6 +56,12 @@ export default function Skills(){
             <BorderDiv>
               <ReduxIco {...size} />
               <div style={{color:"#764ABC"}}>Redux</div>  
+            </BorderDiv>
+          </SkillWrap>
+          <SkillWrap>
+            <BorderDiv style={{textAlign:"center"}}>
+              <NextJsIco {...size.nextjs} style={{margin:"0 auto"}}/>
+              {/* <div style={{color:"#000000"}}>Next.js</div>   */}
             </BorderDiv>
           </SkillWrap>
         </Skill>

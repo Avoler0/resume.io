@@ -28,18 +28,20 @@ export default function Profile(){
           </li>
         </a>
       </ul>
-      <p>
-        Birth: 
-        <span>1998.01.10</span>
-      </p>
-      <p>
-        Email: 
-        <span>jys1391@gmail.com</span>
-      </p>
-      <p>
-        Phone:
-          <span style={{letterSpacing:"1.8px"}}>010-5897-8991</span>
-      </p>
+      <div>
+        <p>
+          Birth: 
+          <span> 1998.01.10</span>
+        </p>
+        <p>
+          Email: 
+          <span> jys1391@gmail.com</span>
+        </p>
+        <p>
+          Phone:
+            <span style={{letterSpacing:"1.8px"}}> 010-5897-8991</span>
+        </p>
+      </div>
     </Column>
   </ProcfileDiv>
  ) 
@@ -50,36 +52,43 @@ const ProcfileDiv = styled.div`
   margin-top: 3rem;
   height: 10rem;
   @media (max-width: 768px) {
-    margin:0;
+    display: block;
+    margin:0 0 10rem 0;
     padding: 1rem;
     height: 16rem;
+    h1{
+      text-align: center;
+    }
   }
 `;
 const ImageDiv = styled.div`
   text-align: center;
+  margin: 0 auto;
 `;
 const Image = styled.img`
-  width: 150px;
-  border-radius: 150px;
-  @media (max-width: 768px) {
-    width: 300px;
-    margin: 0;
-    border-radius: 300px;
-  }
+  width: 200px;
+  border-radius: 200px;
 `;
 const Column = styled.div<{location:string}>`
-  /* display: ${props => props.location === "left" ? "flex" : "block"}; */
   float: ${props => props.location};
   @media (max-width: 768px) {
+    display: ${props => props.location === "right" ? "flex" : "block"};
     float: none;
   }
   ul{
+    margin: auto;
     padding: 0;
-    
+    @media (max-width: 768px) {
+      margin-top: 1rem;
+    }
   }
   li{
     display: inline-block;
     margin-right:1rem;
+    @media (max-width: 768px) {
+      display: block;
+      margin: 0 auto;
+    }
   }
   svg{
     cursor: pointer;
@@ -88,9 +97,18 @@ const Column = styled.div<{location:string}>`
       transform: scale(1.1);
     }
   }
+  div{
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+    }
+  }
   p{
     margin: 0;
     letter-spacing: 1px;
+    @media (max-width: 768px) {
+      margin: 0.4rem auto;
+      font-weight: bold;
+    }
     span{
       font-weight: 500;
       font-size: 1.1rem;

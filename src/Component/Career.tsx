@@ -7,6 +7,20 @@ export default function Career(){
       <H3>Career</H3>
       <Content>
         <Name>
+          <h4>원티드 프리온보딩</h4>
+          <div>프론트엔드 프리온보딩 코스 과정</div>
+          <div style={{color:"#cccccc"}}>2022.07 - 2022.08</div>
+        </Name>
+        <Description>
+          <ul>
+            <li>5인의 팀으로 활동하면서 동료들과 코드 리뷰를 수행하며 협업 역량을 키웠습니다.</li>
+            <li>팀원 중 팀장으로서 리더십으로  팀원들과의 소통 및 의견 조율, 프로젝트 진행 상황 등 일정 관리를 진행하고 팀원들을 이끌었습니다.</li>
+            <li>5개의 프로젝트를 진행하며 기존에 학습한 이론 및 기술을 바탕으로 기업에서 제공하는 실전 과제를 통해서 다양한 사례의 프로젝트를 경험하며, 실전과 같이 프로젝트를 진행했습니다.</li>
+          </ul>
+        </Description>
+      </Content>
+      <Content>
+        <Name>
           <h4>세종컴퓨터학원</h4>
           <div>C/C++ 프로그래밍 과정</div>
           <div style={{color:"#cccccc"}}>2021.06 - 2022.02</div>
@@ -22,20 +36,6 @@ export default function Career(){
           <ul>
             <h4>JAVA 프로그래밍 과정 수료</h4>
             <li>Java의 전반적인 Programming 문법을 익혔습니다.</li>
-          </ul>
-        </Description>
-      </Content>
-            <Content>
-        <Name>
-          <h4>원티드 프리온보딩</h4>
-          <div>프론트엔드 프리온보딩 코스 과정</div>
-          <div style={{color:"#cccccc"}}>2022.07 - 2022.08</div>
-        </Name>
-        <Description>
-          <ul>
-            <li>5인의 팀으로 활동하면서 동료들과 코드 리뷰를 수행하며 협업 역량을 키웠습니다.</li>
-            <li>팀원 중 팀장으로서 리더십으로  팀원들과의 소통 및 의견 조율, 프로젝트 진행 상황 등 일정 관리를 진행하고 팀원들을 이끌었습니다.</li>
-            <li>5개의 프로젝트를 진행하며 기존에 학습한 이론 및 기술을 바탕으로 기업에서 제공하는 실전 과제를 통해서 다양한 사례의 프로젝트를 경험하며, 실전과 같이 프로젝트를 진행했습니다.</li>
           </ul>
         </Description>
       </Content>
