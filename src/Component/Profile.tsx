@@ -70,16 +70,18 @@ const Image = styled.img`
   border-radius: 200px;
 `;
 const Column = styled.div<{location:string}>`
-  float: ${props => props.location};
+  margin: 0 auto;
+  align-items: center;
   @media (max-width: 768px) {
     display: ${props => props.location === "right" ? "flex" : "block"};
+    justify-content: center;
     float: none;
   }
   ul{
-    margin: auto;
     padding: 0;
     @media (max-width: 768px) {
       margin-top: 1rem;
+      margin-left: 1rem;
     }
   }
   li{
@@ -87,7 +89,6 @@ const Column = styled.div<{location:string}>`
     margin-right:1rem;
     @media (max-width: 768px) {
       display: block;
-      margin: 0 auto;
     }
   }
   svg{
