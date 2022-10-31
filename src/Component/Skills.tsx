@@ -65,17 +65,7 @@ export default function Skills(){
             </BorderDiv>
           </SkillWrap>
         </Skill>
-        <Skill>
-            <h4>Tools</h4>
-            <BorderDiv>
-              <NotionIco {...size} />
-              <div>Notion</div>  
-            </BorderDiv>
-            <BorderDiv>
-              <GitIco {...size} fill="#F05032" />
-              <div style={{color:"#F05032"}}>Git</div>  
-            </BorderDiv>
-        </Skill>
+
       </Content>
     </div>
   )
