@@ -65,7 +65,7 @@ export default function Skills(){
             </BorderDiv>
           </SkillWrap>
         </Skill>
-        <Skill>
+        {/* <Skill>
             <h4>Tools</h4>
             <BorderDiv>
               <NotionIco {...size} />
@@ -75,7 +75,7 @@ export default function Skills(){
               <GitIco {...size} fill="#F05032" />
               <div style={{color:"#F05032"}}>Git</div>  
             </BorderDiv>
-        </Skill>
+        </Skill> */}
       </Content>
     </div>
   )
