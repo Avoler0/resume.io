@@ -65,7 +65,6 @@ export default function Skills(){
             </BorderDiv>
           </SkillWrap>
         </Skill>
-<<<<<<< HEAD
         {/* <Skill>
             <h4>Tools</h4>
             <BorderDiv>
@@ -77,9 +76,6 @@ export default function Skills(){
               <div style={{color:"#F05032"}}>Git</div>  
             </BorderDiv>
         </Skill> */}
-=======
-
->>>>>>> e32585656bd7853839f52690981f595e194e1a7e
       </Content>
     </div>
   )
