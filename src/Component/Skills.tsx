@@ -3,22 +3,21 @@ import styled from "styled-components"
 import { ReactComponent as HtmlIco } from "../images/icons/html5.svg"
 import { ReactComponent as CssIco } from "../images/icons/css.svg"
 import { ReactComponent as JsIco } from "../images/icons/javascript.svg"
-import { ReactComponent as NotionIco } from "../images/icons/notion.svg"
 import { ReactComponent as ReactIco } from "../images/icons/react.svg"
 import { ReactComponent as TypeIco } from "../images/icons/typescript.svg"
 import { ReactComponent as StyleIco } from "../images/icons/styled-components.svg"
 import { ReactComponent as ReduxIco } from "../images/icons/redux.svg"
-import { ReactComponent as GitIco } from "../images/icons/git.svg"
 import { ReactComponent as NextJsIco } from "../images/icons/nextjs.svg"
+import { ReactComponent as NextDotJsIco } from "../images/icons/nextdotjs.svg"
+import { ReactComponent as NodeJsIco } from "../images/icons/nodejs.svg"
+import { ReactComponent as NodeDotJsIco } from "../images/icons/nodedotjs.svg"
+import { ReactComponent as MySqlIco } from "../images/icons/mysql.svg"
 import { H3 } from "./CommonStyle";
 
 export default function Skills(){
   const size = {
-    width:"68",
-    height:"90%",
-    nextjs:{
-      height:"99%"
-    }
+    width:"86",
+    height:"90%"
   }
   return (
     <div>
@@ -48,20 +47,38 @@ export default function Skills(){
           </SkillWrap>
           <SkillWrap>
             <BorderDiv>
-              <ReactIco {...size} />
-              <div style={{color:"#61dafb"}}>React</div>  
+              <span>
+                <ReactIco {...size} />
+              </span>
+              <div style={{color:"#61dafb"}}>React.js</div>  
             </BorderDiv>
           </SkillWrap>
           <SkillWrap>
             <BorderDiv>
-              <ReduxIco {...size} />
+              <span>
+                <ReduxIco {...size} />
+              </span>
               <div style={{color:"#764ABC"}}>Redux</div>  
             </BorderDiv>
           </SkillWrap>
           <SkillWrap>
-            <BorderDiv style={{textAlign:"center"}}>
-              <NextJsIco {...size.nextjs} style={{margin:"0 auto"}}/>
-              {/* <div style={{color:"#000000"}}>Next.js</div>   */}
+            <BorderDiv>
+              <span>
+                <NextDotJsIco {...size} style={{margin:"0 auto"}}/>
+              </span>
+              <div style={{color:"#000000"}}>Next.js</div>  
+            </BorderDiv>
+          </SkillWrap>
+          <SkillWrap>
+            <BorderDiv>
+              <span><NodeDotJsIco {...size} fill="#339933" /></span>
+              <div style={{color:"#339933"}}>Node.js</div>  
+            </BorderDiv>
+          </SkillWrap>
+           <SkillWrap>
+            <BorderDiv>
+              <span><MySqlIco {...size} fill="#4479A1" /></span>
+              <div style={{color:"#4479A1"}}>MySql</div>  
             </BorderDiv>
           </SkillWrap>
         </Skill>
@@ -111,17 +128,23 @@ const BorderDiv = styled.div<{small?:boolean}>`
   :hover{
     transform: scale(${props => props.small ? "1.08" : "1.05"});
   }
+  span{
+    height: 100%;
+    display: inline-block;
+    line-height: 150px;
+    margin-left: 20px;
+  }
   svg{
     flex-grow: 0;
     margin-top: 0.3rem;
-    align-items: center;
-    margin-left: ${props => props.small ? "0" : "1.2rem"};;
+    margin-left: ${props => props.small ? "0" : "1.2rem"};
+    margin: ${props => props.small ? "none" : "0 auto"};;
   }
   div{
     flex-grow: 1;
-    align-items: center;
     font-size: 3rem;
     font-weight: 700;
+    width: 60%;
     @media (max-width: 768px) {
       font-size: 2rem;
     }

@@ -24,6 +24,7 @@ export default function AboutMe(){
       <Content>
         <MyContent>
           <Title>자기소개</Title>
+          <SubTitle>꾸준히 노력하는 사람</SubTitle>
           <Text>
             {selfText}
           </Text>
@@ -55,9 +56,14 @@ const Content = styled.div`
   margin: 0 auto;
 `;
 const Title = styled.h2`
-  margin: 0.2rem 0;
+  margin: 0;
   font-size: 1.8rem;
   color: #be9e74;
+`;
+const SubTitle = styled.h4`
+  font-size: 1.3rem;
+  margin: 0;
+  color: #eb270d;
 `;
 const MyContent = styled.div`
   margin-bottom: 2rem;
@@ -66,5 +72,5 @@ const MyContent = styled.div`
 const Text = styled.div`
   white-space: pre-wrap;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
 `;
