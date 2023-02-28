@@ -10,10 +10,11 @@ interface props {
   person:string,
   image:string[],
   Text:Function,
-  git:string
+  git:string,
+  url:string
 }
 
-export default function ProjectCard({project,person,image,Text,git}:props){
+export default function ProjectCard({project,person,image,Text,git,url}:props){
   const Mobile = document.body.clientWidth < 768;
   const [[slide, direction], setSlide] = React.useState([0, 0]);
   const imageIndex = wrap(0,image.length,slide)
@@ -80,6 +81,11 @@ export default function ProjectCard({project,person,image,Text,git}:props){
             </GitSvg>
             <URL>
               <a href={git} target="_blank">{git}</a>
+            </URL>
+          </LinkDiv>
+          <LinkDiv>
+            <URL>
+              <a href={url} target="_blank">{url}</a>
             </URL>
           </LinkDiv>
         </Description>
@@ -229,7 +235,6 @@ const Description = styled.div<{big:any}>`
   width: 50%;
   font-size: 1.05rem;
   font-weight: normal;
-  padding-bottom: 5rem;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -242,19 +247,21 @@ const Description = styled.div<{big:any}>`
   }
 `;
 const LinkDiv = styled.div`
-  position: absolute;
   display: flex;
   align-items: center;
   width: 100%;
   bottom: 0;
   border: 1px solid #cccccc;
   border-radius: 1rem;
+  margin-bottom: 10px;
   font-size: 1rem;
   text-decoration: underline;
   div{
     display: inline-block;
   }
-
+`;
+const LinkContent = styled.div`
+  width: 100%;
 `;
 const GitSvg = styled.div`
   padding: 1rem;
