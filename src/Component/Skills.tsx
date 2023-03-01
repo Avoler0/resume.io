@@ -7,7 +7,7 @@ import { ReactComponent as ReactIco } from "../images/icons/react.svg"
 import { ReactComponent as TypeIco } from "../images/icons/typescript.svg"
 import { ReactComponent as StyleIco } from "../images/icons/styled-components.svg"
 import { ReactComponent as ReduxIco } from "../images/icons/redux.svg"
-import { ReactComponent as NextJsIco } from "../images/icons/nextjs.svg"
+import { ReactComponent as Aws_ec2 }  from "../images/icons/aws_ec2.svg"
 import { ReactComponent as NextDotJsIco } from "../images/icons/nextdotjs.svg"
 import { ReactComponent as NodeJsIco } from "../images/icons/nodejs.svg"
 import { ReactComponent as NodeDotJsIco } from "../images/icons/nodedotjs.svg"
@@ -84,6 +84,13 @@ export default function Skills(){
               <div style={{color:"#4479A1"}}>MySql</div>  
             </BorderDiv>
           </SkillWrap>
+          <h4>ETC</h4>
+          <SkillWrap>
+            <BorderDiv>
+              <span><Aws_ec2 {...size} fill="#232F3E" /></span>
+              <div style={{color:"#232F3E"}}>AWS EC2</div>  
+            </BorderDiv>
+          </SkillWrap>
         </Skill>
       </Content>
     </div>
@@ -126,6 +133,9 @@ const BorderDiv = styled.div<{small?:boolean}>`
     line-height: 150px;
     margin-left: 20px;
   }
+  img{
+    height: 100%;
+  }
   svg{
     flex-grow: 0;
     margin-top: 0.3rem;
@@ -146,6 +156,7 @@ const BorderDiv = styled.div<{small?:boolean}>`
 const Skill = styled.div`
   width: 45%;
   padding: 2rem;
+  padding-top: 0;
   border: 2px solid #CCCCCC;
   border-radius: 15px;
   font-size: 2rem;
@@ -155,10 +166,9 @@ const Skill = styled.div`
   }
   h4{
     color: #87CEEB;
-    
     text-align: left;
     margin: 2.5rem auto;
-    margin-top: 0;
+    margin-top: 1rem;
     border-bottom: 1px solid #a09d9d;
 
   }
