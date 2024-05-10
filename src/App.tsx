@@ -1,12 +1,14 @@
 import Layout from './Layout';
 import styled from 'styled-components'
 import GlobalStyle from './GlobalStyle';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import './css/reset.css'
+import './css/style.css'
+
 function App() {
 
   return (
     <BrowserRouter>
-      <GlobalStyle />
       <Layout />
     </BrowserRouter>
   )

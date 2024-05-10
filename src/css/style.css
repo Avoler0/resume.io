@@ -1,0 +1,27 @@
+
+
+.top_info { padding: 50px 0px; }
+.top_info .profile { position: relative; }
+.top_info .profile .profile_img { height: 100%; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); }
+.top_info .profile img { border-radius: 999px; height: 100%; width: auto; }
+
+.profile::after { clear: both; content: ""; display: block; }
+.profile .info { float: right; }
+
+.profile .info dl { text-align: right; margin-bottom: 3px; }
+.profile .info dl::after { clear: both; content: ""; display: block; }
+.profile .info dl > * { display: inline-block; }
+.profile .info dl > dt { font-size: 18px; font-family: "pretendardM"; }
+.profile .info dl > dd { font-size: 18px; margin-left: 5px; }
+
+.profile .info dl.block { margin-bottom: 15px; }
+.profile .info dl.block > * { display: block; }
+.profile .info dl.block > dt { font-size: 32px; font-family: "pretendardB"; }
+.profile .info dl.block > dd { font-size: 28px; font-family: "pretendardM"; margin-top: -5px; }
+
+.profile .site_list { font-size: 0; left: 0; position: absolute; top: 0; }
+.profile .site_list li { display: inline-block; margin-right: 20px; }
+.profile .site_list a { background-position: center; background-repeat: no-repeat; background-size: 40px; display: block; font-size: 0; height: 40px; text-indent: -20000px; transition: all 0.5s ease; width: 40px; }
+.profile .site_list a:hover { transform: scale(1.1) translateY(-5px); }
+.profile .site_list a.github { background-image: url("/assets/images/icons/github.svg"); }
+.profile .site_list a.velog { background-image: url("/assets/images/icons/velog.svg"); }

@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+/* CSS 초기화 */
+* {
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-size:16px;
+	margin:0;
+	padding:0;
+	line-height: 1.4;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, button {
+	background:transparent;
+	border:0;
+	font-family:"PretendardR", HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+html {
+	-webkit-text-size-adjust:100%;
+}
+
+body {
+	color:#000;
+	line-height:inherit;
+	min-height:100vh;
+	min-width:320px;
+	overflow-x:hidden;
+	width:100%;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+
+nav ul, li {
+	list-style:none;
+}
+
+a {
+	background:transparent;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	vertical-align:baseline;
+}
+
+img {
+	max-width:100%;
+	vertical-align:top;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+input {
+	border-radius:0;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-family:"PretendardR", HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	margin:0;
+	padding:0;
+	vertical-align:top;
+}
+
+select, textarea {
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-family:"PretendardR", HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+header,
+nav,
+section,
+article,
+aside,
+footer { display:block; }
+
+/* scroll */
+*::-webkit-scrollbar { height: 4px; width:4px; }
+*::-webkit-scrollbar-track { background:transparent; }
+*::-webkit-scrollbar-thumb { background:#dedede; border-radius:2px; }
+/* scroll end */
+
+option[value=""][disabled] { display: none; }
+
+/* 웹폰트 CSS */
+
+@font-face { font-family:"pretendardBlk"; src:url("/assets/fonts/Pretendard-Black.ttf") }
+@font-face { font-family:"pretendardBlk"; src:url("/assets/fonts/Pretendard-Black.woff") }
+
+@font-face { font-family:"pretendardB"; src:url("/assets/fonts/Pretendard-Bold.ttf") }
+@font-face { font-family:"pretendardB"; src:url("/assets/fonts/Pretendard-Bold.woff") }
+
+@font-face { font-family:"pretendardEB"; src:url("/assets/fonts/Pretendard-ExtraBold.ttf") }
+@font-face { font-family:"pretendardEB"; src:url("/assets/fonts/Pretendard-ExtraBold.woff") }
+
+@font-face { font-family:"pretendardEL"; src:url("/assets/fonts/Pretendard-ExtraLight.ttf") }
+@font-face { font-family:"pretendardEL"; src:url("/assets/fonts/Pretendard-ExtraLight.woff") }
+
+@font-face { font-family:"pretendardL"; src:url("/assets/fonts/Pretendard-Light.ttf") }
+@font-face { font-family:"pretendardL"; src:url("/assets/fonts/Pretendard-Light.woff") }
+
+@font-face { font-family:"pretendardM"; src:url("/assets/fonts/Pretendard-Medium.ttf") }
+@font-face { font-family:"pretendardM"; src:url("/assets/fonts/Pretendard-Medium.woff") }
+
+@font-face { font-family:"PretendardR"; src:url("/assets/fonts/Pretendard-Regular.ttf") }
+@font-face { font-family:"PretendardR"; src:url("/assets/fonts/Pretendard-Regular.woff") }
+
+@font-face { font-family:"pretendardSB"; src:url("/assets/fonts/Pretendard-SemiBold.ttf") }
+@font-face { font-family:"pretendardSB"; src:url("/assets/fonts/Pretendard-SemiBold.woff") }
+
+@font-face { font-family:"pretendardT"; src:url("/assets/fonts/Pretendard-Thin.ttf") }
+@font-face { font-family:"pretendardT"; src:url("/assets/fonts/Pretendard-Thin.woff") }
+
+/* 웹폰트 CSS end */
