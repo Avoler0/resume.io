@@ -1,5 +1,7 @@
 
 
+.container { max-width: 1120px; margin: 0 auto; }
+
 .top_info { padding: 50px 0px; }
 .top_info .profile { position: relative; }
 .top_info .profile .profile_img { height: 100%; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); }
@@ -25,3 +27,12 @@
 .profile .site_list a:hover { transform: scale(1.1) translateY(-5px); }
 .profile .site_list a.github { background-image: url("/assets/images/icons/github.svg"); }
 .profile .site_list a.velog { background-image: url("/assets/images/icons/velog.svg"); }
+
+.resume section + section { padding-top: 50px; }
+.resume section.about_me { padding-top: 0; }
+.resume section h2 { color: var(--base-gray); font-size: 38px; font-family: "pretendardEB"; }
+.resume section.about_me .desc { margin-top: 25px; }
+.resume section.about_me dl + dl {padding-top: 40px; }
+.resume section.about_me dt { font-size: 26px; font-family: "pretendardB"; margin-bottom: 5px; }
+.resume section.about_me dd { color: var(--navy); font-size: 18px; font-family: "pretendardM"; line-height: 1.5; }
+.resume section.about_me dd > b { color: black; font-size: 18px; font-family: "pretendardB";}
